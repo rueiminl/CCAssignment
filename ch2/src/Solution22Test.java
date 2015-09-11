@@ -18,5 +18,4 @@ public class Solution22Test {
 		assertEquals(Solution22.ReturnKthToLast(head1, 3).value, 1);
 		assertEquals(Solution22.ReturnKthToLast(head1, 4), null);
 	}
-
 }

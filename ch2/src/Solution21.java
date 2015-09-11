@@ -1,8 +1,7 @@
-package ch2;
-
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Set;
 
 public class Solution21 {
@@ -15,6 +14,18 @@ public class Solution21 {
 				it.remove();
 			else
 				exist.add(i);
+		}
+	}
+	public static void removeDups2(LinkedList<Integer> head) {
+		// follow up: without additional memory
+		for (int index = 0; index < head.size(); index++) {
+			ListIterator<Integer> iter = head.listIterator(index);
+			Integer i = iter.next();
+			while (iter.hasNext()) {
+				Integer i2 = iter.next();
+				if (i == i2)
+					iter.remove();
+			}
 		}
 	}
 }

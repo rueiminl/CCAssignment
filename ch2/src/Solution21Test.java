@@ -1,4 +1,4 @@
-package ch2;
+
 
 import static org.junit.Assert.*;
 
@@ -25,7 +25,7 @@ public class Solution21Test {
 		LinkedList<Integer> listWithoutDups1 = new LinkedList<Integer>();
 		for (Integer i = 1; i <= 7; i++)
 			listWithoutDups1.add(i);
-		Solution21.removeDups(list1);
+		Solution21.removeDups2(list1);
 		assertTrue(list1.equals(listWithoutDups1));
 
 		LinkedList<Integer> list2 = new LinkedList<Integer>();
@@ -36,12 +36,12 @@ public class Solution21Test {
 		list2.add(1);
 		LinkedList<Integer> listWithoutDups2 = new LinkedList<Integer>();
 		listWithoutDups2.add(1);
-		Solution21.removeDups(list2);
+		Solution21.removeDups2(list2);
 		assertTrue(list2.equals(listWithoutDups2));
 
 		LinkedList<Integer> list3 = new LinkedList<Integer>();
 		LinkedList<Integer> listWithoutDups3 = new LinkedList<Integer>();
-		Solution21.removeDups(list3);
+		Solution21.removeDups2(list3);
 		assertTrue(list3.equals(listWithoutDups3));
 	}
 

@@ -36,5 +36,15 @@ public class Solution25 {
 			result.add(0);
 		return result;
 	}
-
+	public static LinkedList<Integer> reverse(LinkedList<Integer> head) {
+		if (head == null)
+			return null;
+		LinkedList<Integer> result = new LinkedList<Integer>();
+		for (Integer i : head)
+			result.addFirst(i);
+		return result;
+	}
+	public static LinkedList<Integer> sumLists2(LinkedList<Integer> n1, LinkedList<Integer> n2) {
+		return reverse(sumLists(reverse(n1), reverse(n2)));
+	}
 }

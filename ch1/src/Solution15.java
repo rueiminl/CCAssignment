@@ -1,5 +1,8 @@
 
 public class Solution15 {
+	/**
+	 * Complexity: O(N) to iterate the string to count the difference
+	 */
 	public static boolean oneAway(String str1, String str2) {
 		if (Math.abs(str1.length() - str2.length()) > 1)
 			return false;
@@ -36,5 +39,12 @@ public class Solution15 {
 			return oneAway(str2, str1);
 		}
 		return true;
+	}
+	public static void main(String[] args) {
+		String[] strs1 = {"pale", "pales", "pale", "pale"};
+		String[] strs2 = {"ple",  "pale",  "bale", "bake"};
+		for (int i = 0; i < strs1.length; i++) {
+			System.out.println(strs1[i] + ", " + strs2[i] + " -> " + oneAway(strs1[i], strs2[i]));
+		}
 	}
 }

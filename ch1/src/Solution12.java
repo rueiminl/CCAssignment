@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class Solution12 {
 	public static boolean checkPermutation(String str1, String str2) {
 		/**
+		 * algorithm: sort and compare these two string
 		 * complexity: O(NlogN) (due to the sort operation)
 		 */
 		char [] chars1 = str1.toCharArray();

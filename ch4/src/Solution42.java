@@ -1,5 +1,8 @@
 import java.util.Arrays;
 
+/**
+ * Algorithm: recursive.
+ */
 public class Solution42 {
 	public static class Tree {
 		public int id;

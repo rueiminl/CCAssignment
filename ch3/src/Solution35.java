@@ -3,43 +3,23 @@ import java.util.Stack;
 public class Solution35 {
 	/**
 	 * Assumption: type Integer
-	 * Algorithm: quick sort
+	 * Algorithm: move one value from stack to the buffer, and make sure the buff is sorted anytime.
+	 *   afterwards, put back to the original stack.
+	 * Complexity: O(N^2)
 	 */
 	public static void sortStack(Stack<Integer> stack) {
-		if (stack.empty()) // down
-			return;
-		int anchor = stack.peek();
-		stack.pop();
-		Stack<Integer> smaller = new Stack<Integer>(); 
-		Stack<Integer> bigger = new Stack<Integer>();
+		Stack<Integer> buff = new Stack<Integer>();
 		while (!stack.empty()) {
-			int value = stack.peek();
-			stack.pop();
-			if (value < anchor)
-				smaller.push(value);
-			else
-				bigger.push(value);
+			int value = stack.pop();
+			// assume buff is sorted (top is smallest),
+			// make sure all the values in the buff is bigger than value
+			while (!buff.empty() && buff.peek() < value) {
+				stack.push(buff.pop());
+			}
+			buff.push(value);
 		}
-		sortStack(smaller);
-		sortStack(bigger);
-		Stack<Integer> buffer = new Stack<Integer>();
-		while (!smaller.empty()) {
-			buffer.push(smaller.peek());
-			smaller.pop();
-		}
-		while (!buffer.empty()) {
-			stack.push(buffer.peek());
-			buffer.pop();
-		}
-		stack.push(anchor);
-		while (!bigger.empty()) {
-			buffer.push(bigger.peek());
-			bigger.pop();
-		}
-		while (!buffer.empty()) {
-			stack.push(buffer.peek());
-			buffer.pop();
-		}
+		while (!buff.empty())
+			stack.push(buff.pop());
 	}
 	public static void main(String[] args) {
 		Stack<Integer> stack = new Stack<Integer>();

@@ -1,6 +1,7 @@
 
 /**
- * Algorithm: for each node, for each descendant, check the sum
+ * Algorithm: for each node, result += #paths which sums up to the target and ends at the node
+ * Complexity: O(NlogN) (for each node = N; count #path = logN) 
  */
 public class Solution412 {
 	public static class Tree {

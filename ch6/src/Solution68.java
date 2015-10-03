@@ -22,7 +22,7 @@ public class Solution68 {
 			+ "13  7+12 = 19\n"
 			+ "14  7+13 = 20\n"
 			+ "...etc\n"
-			+ "So the minimum test would be 19 time!\n"
+			+ "So the minimum drops would be 19 time!\n"
 		);
 		System.out.println(mySolution.toString());
 	}	

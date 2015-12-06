@@ -1,0 +1,9 @@
+Usage:
+
+    node main.js filename
+    (eg. node main.js pg45.txt)
+
+
+    The output would be generated as filename.output.html
+    (eg. pg45.txt.html)
+
